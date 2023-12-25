@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mKitchen</title>
+
+  <!-- Load HTMX from CDN -->
+  <script src="https://unpkg.com/htmx.org"></script>
+  <!-- Load the history extension for browser navigation -->
+  <script src="https://unpkg.com/htmx.org/dist/ext/htmx-history.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to mKitchen</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/news.html">News</a>
+      <a href="/join.html">Join</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <body>
+        <!-- A button that triggers a POST request to /register and replaces itself with the response -->
+        <button hx-post="/register" hx-swap="outerHTML">Register</button>
+        <!-- A form that triggers a GET request to /search with the input value and updates the results div -->
+        <form hx-get="/search" hx-target="#results">
+            <input type="text" name="query" placeholder="Search for food or recipes">
+            <button type="submit">Search</button>
+        </form>
+        <!-- A div that displays the search results -->
+        <div id="results"></div>
+        <!-- A div that connects to a WebSocket and displays the latest news from mKitchen -->
+        <div hx-ws="wss://mkitchen.com/news" hx-swap="innerHTML">No news yet</div>
+  </main>
+  <footer>
+    
+  </footer>
+
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
