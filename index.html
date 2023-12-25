@@ -32,15 +32,49 @@
     <h1>Welcome to mKitchen</h1>
     <nav>
       <a href="/">Home</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/news.html">News</a>
-      <a href="/join.html">Join</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
+      <a href="services.html">Our Services</a>
+      <a href="/explain.html">How It Works</a>
+      <a href="/partners.html">Partners</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/join.html">Join Us</a>
+      <a href="/donate.html">Donate</a>
+      <a href="/about.html">About Us</a>
+      <a href="/contact.html">Contact Us</a>
+      <a href="/update.html">Blog/News</a>
     </nav>
   </header>
   <main>
     <body>
+      <!-- Introduction to mKitchen -->
+      <section>
+        <h2>Introduction</h2>
+        <p>
+          mKitchen is a non-profit organization that provides free meals to those in need. We are a group of
+          volunteers who are passionate about helping others. We believe that everyone should have access to
+          healthy food, regardless of their financial situation. Our goal is to make sure that no one goes
+          hungry in our community. If you or someone you know needs help getting food, please contact us today!
+        </p>
+      </section>
+      <!-- Value proposition -->
+      <section>
+        <h2>Value Proposition</h2>
+        <p>
+          We provide free meals to those in need. Our goal is to make sure that no one goes hungry in our
+          community. If you or someone you know needs help getting food, please contact us today!
+        </p>
+      </section>
+      <!-- Call to action (e.g., Order Now, Donate, Join Us) -->
+      <section>
+        <h2>Order Now</h2>
+        <p>Buy our food and helps those in need!</p>
+        <a href="/order.html">Order Now</a>
+        <h2>Donate</h2>
+        <p>Donate to help us help others!</p>
+        <a href="/donate.html">Donate</a>
+        <h2>Join Us</h2>
+        <p>Join us to help others!</p>
+        <a href="/join.html">Join Us</a>
+      </section>
         <!-- A button that triggers a POST request to /register and replaces itself with the response -->
         <button hx-post="/register" hx-swap="outerHTML">Register</button>
         <!-- A form that triggers a GET request to /search with the input value and updates the results div -->
@@ -52,9 +86,10 @@
         <div id="results"></div>
         <!-- A div that connects to a WebSocket and displays the latest news from mKitchen -->
         <div hx-ws="wss://mkitchen.com/news" hx-swap="innerHTML">No news yet</div>
+
   </main>
   <footer>
-    
+
   </footer>
 
   <script src="js/app.js"></script>
